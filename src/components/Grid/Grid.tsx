@@ -3,6 +3,7 @@ import './Grid.css';
 interface GridProps {
   grid: boolean[][];
   setGrid: React.Dispatch<React.SetStateAction<any[][]>>;
+  toggleCell: (rowIndex: number, columnIndex: number) => void;
 }
 
 interface CellProps {
@@ -19,14 +20,7 @@ const Cell: React.FC<CellProps> = ({ isBacteria, onClick }) => {
   );
 };
 
-const Grid: React.FC<GridProps> = ({ grid, setGrid }) => {
-  function toggleCell(rowIndex: number, columnIndex: number): void {
-    let copy = [...grid];
-    let val = copy[rowIndex][columnIndex];
-    copy[rowIndex][columnIndex] = !val;
-    setGrid(copy);
-  }
-
+const Grid: React.FC<GridProps> = ({ grid, setGrid, toggleCell }) => {
   return (
     <div className="grid-container">
       {grid.map((row, rowIndex) => (
