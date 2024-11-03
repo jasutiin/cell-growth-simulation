@@ -1,0 +1,30 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(200, 1fr);
+  grid-template-rows: repeat(200, 1fr);
+  gap: 1px;
+  height: 90vh;
+  width: 90vw;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.cell.alive {
+  background-color: #4caf50;
+}
+
+.cell.dead {
+  background-color: #fff;
+}
